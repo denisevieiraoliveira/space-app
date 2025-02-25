@@ -2,29 +2,54 @@ import styled from "styled-components";
 import Titulo from "../Titulo";
 import Tags from "./Tags";
 import Populares from "./Populares";
+import Imagem from "./Imagem";
 
 const GaleriaContainer = styled.div`
     display: flex;
-`;
+    gap: 24px;
+`
 
 const SecaoFluida = styled.section`
     flex-grow: 1;
 `;
 
-const Galeria = ({ fotos }) => {
+const ImagensContainer = styled.section`
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+`;
 
+const Container = styled.div`
+  /* Estilos para todas as telas */
+  width: 100%;
+
+  @media (min-width: 768px) {
+    /* Estilos para telas a partir de 768px */
+    width: 80%;
+  }
+
+  @media (min-width: 1200px) {
+    /* Estilos para telas a partir de 1200px */
+    width: 60%;
+  }
+`;
+
+const Galeria = ({ fotos = [] }) => {
     return (
         <>
             <Tags />
             <GaleriaContainer>
                 <SecaoFluida>
                     <Titulo>Navegue pela galeria</Titulo>
-                    <ul>
-
-                    </ul>
-                    {fotos.map((foto) => (
-                        <li>{foto.titulo}</li>
-                    ))}
+                    <ImagensContainer>
+                        {fotos.map((foto) => (
+                            <Imagem 
+                                key={foto.id} 
+                                foto={foto} 
+                                expandida={false}
+                            />
+                        ))}
+                    </ImagensContainer>
                 </SecaoFluida>
                 <Populares />
             </GaleriaContainer>
