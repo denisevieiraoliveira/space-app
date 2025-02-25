@@ -13,12 +13,19 @@ const Overlay = styled.div`
 const DialogEstilizado = styled.dialog`
     position: absolute;
     top: 294px;
-    padding: 0; 
     background: transparent;
-    border: none;
-    & > figure {
-        width: 1156px;
-        position: relative;
+    padding: 0;
+    border: 0;
+    width: 1156px;
+    display: flex;
+    justify-content: center;
+    form {
+        button {
+            position: relative;
+            top: 20px;
+            right: 60px;
+            cursor: pointer;
+        }
     }
 `
 
@@ -30,12 +37,12 @@ const BotaoEstilizado = styled.button`
     border: none;
 `
 
-const ModalZoom = ({ foto }) => {
+const ModalZoom = ({ foto, aoFechar }) => {
     return (
         <>
             {foto && <>
-                <DialogEstilizado open={!!foto}>
-                    <Overlay />
+                <Overlay />
+                <DialogEstilizado open={!!foto} onClose={aoFechar}>
                     <Imagem
                         foto={foto}
                         expandida={true}

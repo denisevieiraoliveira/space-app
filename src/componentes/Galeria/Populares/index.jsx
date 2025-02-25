@@ -4,29 +4,31 @@ import styled from "styled-components";
 import fotosPopulares from "./fotos-populares.json"
 import Titulo from "../../Titulo";
 
-const ImagensPopulares = styled.section`
+const ColunaFotos = styled.section`
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 24px;
-    width: 212px;
-    & > img {
-        width: 100%;
-        height: 160px;
-        object-fit: cover;
-        border-radius: 20px;
-    }
-    button {
-        width: 100%;
-        background: transparent;
-        border: 2px solid #C98CF1;
-        border-radius: 10px;
-        padding: 12px;
-        color: #FFF;
-        font-size: 20px;
-        font-family: GandhiSansBold;
-        cursor: pointer;
-    }
+    flex-direction: column;
+    gap: 16px;
+`
+
+const ImagemPopular = styled.img`
+    max-width: 212px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 20px;
+`
+
+const Botao = styled.button`
+    width: 100%;
+    background: transparent;
+    border: 2px solid #C98CF1;
+    border-radius: 10px;
+    padding: 12px 20px;
+    color: #FFF;
+    font-size: 20px;
+    font-family: GandhiSansBold;
+    cursor: pointer;
+    max-width: 212px;
+    margin-top: 16px;
 `
 
 const Populares = () => {
@@ -35,12 +37,12 @@ const Populares = () => {
     return (
         <section>
             <Titulo alinhamento="center">Populares</Titulo>
-            <ImagensPopulares>
+            <ColunaFotos>
                 {fotos.map(foto => (
-                    <img src={foto.path} alt={foto.titulo} />
+                    <ImagemPopular key={foto.id} src={foto.path} alt={foto.titulo} />
                 ))}
-            <button>Ver mais</button>
-            </ImagensPopulares>
+            </ColunaFotos>
+            <Botao>Ver mais</Botao>
         </section>
     )
 }
