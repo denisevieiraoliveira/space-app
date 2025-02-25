@@ -47,11 +47,14 @@ const BotaoIcone = styled.button`
     img {
         width: 24px;
     }
+    & :hover {
+        cursor: pointer;
+    }
 `;
 
-const Imagem = ({ foto, expandida=false }) => {
+const Imagem = ({ foto, expandida=true, aoZoomSolicitado }) => {
     return (
-        <Figure id={`foto-${foto.tagId}`} $expandida={expandida}>
+        <Figure id={`foto-${foto.id}`} $expandida={expandida}>
             <img src={foto.path} alt={foto.titulo} />
             <figcaption>
                 <h3>{foto.titulo}</h3>
@@ -60,7 +63,7 @@ const Imagem = ({ foto, expandida=false }) => {
                     <BotaoIcone>
                         <img src="public/icones/favorito.png" alt="Botão de favorito" />
                     </BotaoIcone>
-                    {!expandida && <BotaoIcone aria-hidden={expandida}>
+                    {!expandida && <BotaoIcone aria-hidden={expandida} onClick={() => {aoZoomSolicitado(foto)}}>
                         <img src="public/icones/expandir.png" alt="Botão de expandir" />
                     </BotaoIcone>}
                 </Rodape>
