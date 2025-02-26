@@ -24,9 +24,9 @@ const Rodape = () => {
     return(
         <FooterEstilizado>
             <ContainerRedesSociais>
-                <a><img src="public/imagens/sociais/facebook.svg" alt="Ícone do facebook" /></a>
-                <a><img src="public/imagens/sociais/twitter.svg" alt="Ícone do twitter" /></a>
-                <a><img src="public/imagens/sociais/instagram.svg" alt="Ícone do instagram" /></a>
+                <a><img src="/imagens/sociais/facebook.svg" alt="Ícone do facebook" /></a>
+                <a><img src="/imagens/sociais/twitter.svg" alt="Ícone do twitter" /></a>
+                <a><img src="/imagens/sociais/instagram.svg" alt="Ícone do instagram" /></a>
             </ContainerRedesSociais>
             <p>Desenvolvido por Alura.</p>
         </FooterEstilizado>

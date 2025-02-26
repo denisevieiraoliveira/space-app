@@ -63,7 +63,7 @@ const Imagem = ({ foto, expandida = true, aoZoomSolicitado, aoFavoritar }) => {
           <h4>{foto.fonte}</h4>
           <BotaoIcone
             onClick={() => {aoFavoritar(foto)}}>
-            <img src={foto.favorito ? "public/icones/favorito-ativo.png" : "public/icones/favorito.png"} alt="Botão de favorito" />
+            <img src={foto.favorito ? "/icones/favorito-ativo.png" : "/icones/favorito.png"} alt="Botão de favorito" />
           </BotaoIcone>
           {!expandida && (
             <BotaoIcone
@@ -72,7 +72,7 @@ const Imagem = ({ foto, expandida = true, aoZoomSolicitado, aoFavoritar }) => {
                 aoZoomSolicitado(foto);
               }}
             >
-              <img src="public/icones/expandir.png" alt="Botão de expandir" />
+              <img src="/icones/expandir.png" alt="Botão de expandir" />
             </BotaoIcone>
           )}
         </Rodape>

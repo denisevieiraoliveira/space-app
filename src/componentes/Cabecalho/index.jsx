@@ -14,8 +14,8 @@ const HeaderEstilizado = styled.header`
 const Cabecalho = ({ filtrarPorBusca }) => {
   return (
     <HeaderEstilizado>
-      <img src="public/imagens/logo.png" alt="Logotipo do SpaceApp" />
-      <CampoTexto search="src/componentes/CampoTexto/search.png" filtrarPorBusca={filtrarPorBusca} />
+      <img src="/imagens/logo.png" alt="Logotipo do SpaceApp" />
+      <CampoTexto search="/icones/search.png" filtrarPorBusca={filtrarPorBusca} />
     </HeaderEstilizado>
   );
 };
