@@ -100,7 +100,7 @@ const App = () => {
           <BarraLateral />
           <ConteudoGaleria>
             <Banner
-              backgroundImage="public/imagens/banner.png"
+              backgroundImage="/imagens/banner.png"
               texto="A galeria mais completa de fotos do espaço!"
             />
             <Galeria
