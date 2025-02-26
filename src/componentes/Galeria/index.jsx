@@ -4,20 +4,18 @@ import Tags from "./Tags";
 import Populares from "./Populares";
 import Imagem from "./Imagem";
 
-
-
 const GaleriaContainer = styled.div`
-    display: flex;
-`
+  display: flex;
+`;
 
 const SecaoFluida = styled.section`
-    flex-grow: 1;
+  flex-grow: 1;
 `;
 
 const ImagensContainer = styled.section`
-    display: flex;
-    flex-wrap: wrap;
-    gap: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
 `;
 
 const Container = styled.div`
@@ -35,28 +33,29 @@ const Container = styled.div`
   }
 `;
 
-const Galeria = ({ fotos = [], aoFotoSelecionada }) => {
-    return (
-        <>
-            <Tags />
-            <GaleriaContainer>
-                <SecaoFluida>
-                    <Titulo>Navegue pela galeria</Titulo>
-                    <ImagensContainer>
-                        {fotos.map((foto) => (
-                            <Imagem 
-                                aoZoomSolicitado={aoFotoSelecionada}
-                                key={foto.id} 
-                                foto={foto} 
-                                expandida={false}
-                            />
-                        ))}
-                    </ImagensContainer>
-                </SecaoFluida>
-                <Populares />
-            </GaleriaContainer>
-        </>
-    );
-}
+const Galeria = ({ fotos = [], aoFotoSelecionada, aoFavoritar, filtrarPorTag }) => {
+  return (
+    <>
+      <Tags filtrarPorTag={filtrarPorTag} />
+      <GaleriaContainer>
+        <SecaoFluida>
+          <Titulo>Navegue pela galeria</Titulo>
+          <ImagensContainer>
+            {fotos.map((foto) => (
+              <Imagem
+                aoZoomSolicitado={aoFotoSelecionada}
+                aoFavoritar = {aoFavoritar}
+                key={foto.id}
+                foto={foto}
+                expandida={false}
+              />
+            ))}
+          </ImagensContainer>
+        </SecaoFluida>
+        <Populares />
+      </GaleriaContainer>
+    </>
+  );
+};
 
 export default Galeria;
